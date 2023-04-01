@@ -6,22 +6,22 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CarService {
+public class GruzService {
     @Autowired
-    private CarRepository repo;
+    private GruzRepository repo;
 
-    public List<Car> listAll(String keyword){
+    public List<Gruz> listAll(String keyword){
         if (keyword != null){
             return repo.search(keyword);
         }
         return repo.findAll();
     }
 
-    public void save(Car car){
-        repo.save(car);
+    public void save(Gruz gruz){
+        repo.save(gruz);
     }
 
-    public Car get(Long id){
+    public Gruz get(Long id){
         return repo.findById(id).get();
     }
 
